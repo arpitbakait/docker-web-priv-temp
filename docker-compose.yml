@@ -10,12 +10,12 @@ services:
       - /app/node_modules
       - ./web:/app
     stdin_open: true
-  test:
-    build:
-      context: ./web
-      dockerfile: Dockerfile.dev
-    volumes:
-      - /app/node_modules
-      - ./web:/app
-    command: ["npm", "run", "test"]
-    stdin_open: true
+  # test:
+  #   build:
+  #     context: ./web
+  #     dockerfile: Dockerfile.dev
+  #   volumes:
+  #     - /app/node_modules
+  #     - ./web:/app
+  #   command: ["npm", "run", "test"]
+  #   stdin_open: true
