@@ -3,8 +3,8 @@ services:
   - docker
 before_install:
   - docker build -t arpitpriv/docker-web:latest -f web/Dockerfile.dev ./web
-script:
-  - docker run arpitpriv/docker-web:latest npm run test --coverage
+# script:
+#   - docker run arpitpriv/docker-web:latest npm run test --coverage
 deploy:
   provider: elasticbeanstalk
   region: "us-east-2"
