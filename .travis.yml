@@ -11,7 +11,7 @@ deploy:
   app: "learninh-docker-temp"
   env: "LearninhDockerTemp-env"
   bucket_name: "elasticbeanstalk-us-east-2-943977056781"
-  bucket_path: "docker_bucket_temp"
+  bucket_path: "docker"
   on:
     branch: master
   access_key_id: "$AWS_ACCESSS_KEY"
