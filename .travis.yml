@@ -5,3 +5,15 @@ before_install:
   - docker build -t arpitpriv/docker-web:latest -f web/Dockerfile.dev ./web
 script:
   - docker run arpitpriv/docker-web:latest npm run test --coverage
+deploy:
+  provider: elasticbeanstalk
+  region: "us-east-2"
+  app: "learninh-docker-temp"
+  env: "LearninhDockerTemp-env"
+  bucket_name: "elasticbeanstalk-us-east-2-943977056781"
+  bucket_path: "docker_bucket_temp"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key:
+    secure: "$AWS_SECRET_KEY"
