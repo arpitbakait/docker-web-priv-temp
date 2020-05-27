@@ -5,6 +5,8 @@ before_install:
   - docker build -t arpitpriv/docker-web:latest -f web/Dockerfile.dev ./web
 script:
   - docker run -e CI=true arpitpriv/docker-web:latest npm run test -- --coverage
+
+# s3 error is still there check
 deploy:
   provider: elasticbeanstalk
   region: "us-east-2"
